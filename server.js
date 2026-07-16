@@ -1,8 +1,10 @@
 const express = require("express");
 const path = require("path");
 const nodemailer = require("nodemailer");
+const dotenv = require('dotenv')
 
 const app = express();
+dotenv.config()
 const PORT = 3000;
 
 app.use(express.urlencoded({ extended: true }));
@@ -13,8 +15,8 @@ app.use(express.static(path.join(__dirname, "public")));
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
-    user: "michaelchineduchilaka@gmail.com",
-    pass: "ihsa mlzj dluh pcjb"
+    user: process.env.EMAIL_USERNAME,
+    pass: process.env.EMAIL_PASSWORD
 
   }
 });
