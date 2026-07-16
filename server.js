@@ -29,7 +29,7 @@ app.post("/register", async (req, res) => {
   const { fullname, email } = req.body;
 
   const challengeLink =
-    `http://localhost:${PORT}/challenge?name=${encodeURIComponent(fullname)}`;
+    `https://school-yech-day-project.vercel.app/challenge?name=${encodeURIComponent(fullname)}`;
 
   const emailTemplate = `
   <div style="
