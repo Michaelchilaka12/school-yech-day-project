@@ -26,7 +26,7 @@ app.get("/", (req, res) => {
 });
 
 app.post("/register", async (req, res) => {
-  const { fullname, email , bank} = req.body;
+  const { fullname, email} = req.body;
 
   const challengeLink =
     `https://school-yech-day-project.vercel.app/challenge?name=${encodeURIComponent(fullname)}`;
@@ -105,7 +105,7 @@ app.post("/register", async (req, res) => {
 
 app.get("/challenge", (req, res) => {
   const name = req.query.name || "Guest";
-  const bank = req.query.bank || bank
+  
 
   res.send(`
   <!DOCTYPE html>
@@ -177,7 +177,7 @@ app.get("/challenge", (req, res) => {
 
     <div class="card">
 
-      <h1>🎣 Debit Alert From ${bank} </h1>
+      <h1>🎣 Debit Alert From ${req.body.bank} </h1>
 
       <div class="banner">
       Ten Million Nira(10,000000) Has Been Deducted From Your Account.
