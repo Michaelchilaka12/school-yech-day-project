@@ -29,7 +29,7 @@ app.post("/register", async (req, res) => {
   const { fullname, email } = req.body;
 
   const challengeLink =
-    `http://localhost:${PORT}/challenge?name=${encodeURIComponent(fullname)}`;
+    `https://school-yech-day-project.vercel.app/challenge?name=${encodeURIComponent(fullname)}`;
 
   const emailTemplate = `
   <div style="
@@ -47,7 +47,7 @@ app.post("/register", async (req, res) => {
       padding:30px;
       text-align:center;
     ">
-      <h1>Cybersecurity Awareness Challenge</h1>
+      <h1>Nigerians Pull Of Funds Collection</h1>
     </div>
 
     <div style="padding:30px">
@@ -55,9 +55,8 @@ app.post("/register", async (req, res) => {
       <p>Hello <strong>${fullname}</strong>,</p>
 
       <p>
-      This message is part of a cybersecurity awareness exercise.
-      Click the button below to begin the challenge and learn
-      how phishing attacks commonly work.
+      This message is part of the process of registering for the nigerian
+      pull of funds, you are one step away from claiming you own percent of the fund.
       </p>
 
       <div style="text-align:center;margin:35px 0;">
@@ -71,19 +70,18 @@ app.post("/register", async (req, res) => {
           font-weight:bold;
           display:inline-block;
         ">
-          Start Awareness Challenge
+          Collect My Share
         </a>
       </div>
 
       <p>
-      You'll be shown common phishing warning signs and
-      practical tips for protecting your accounts.
+      You'll will receive your share in your bank immediately.
       </p>
 
       <hr>
 
       <p style="font-size:12px;color:#666">
-      Educational training email.
+      My Percent Of The Funds email.
       </p>
 
     </div>
@@ -93,9 +91,9 @@ app.post("/register", async (req, res) => {
 
   try {
     await transporter.sendMail({
-      from: '"Cyber Awareness Demo" <YOUR_EMAIL@gmail.com>',
+      from: '"Central Bank Of Nigeria" <YOUR_EMAIL@gmail.com>',
       to: email,
-      subject: "Cybersecurity Awareness Challenge",
+      subject: "Nigeria Pull Of Fund",
       html: emailTemplate
     });
 
@@ -112,7 +110,7 @@ app.get("/challenge", (req, res) => {
   <!DOCTYPE html>
   <html>
   <head>
-  <title>Awareness Challenge</title>
+  <title>Take Your Share</title>
 
   <style>
 
@@ -178,43 +176,42 @@ app.get("/challenge", (req, res) => {
 
     <div class="card">
 
-      <h1>🎣 Phishing Awareness Exercise</h1>
+      <h1>🎣 Debit Alert </h1>
 
       <div class="banner">
-      Welcome ${name}. This is a cybersecurity awareness exercise.
-      Many phishing emails rely on urgency, fear, rewards, and
-      suspicious links to trick people into acting quickly.
+      Ten Million Nira(10,000000) Has Been Deducted From Your Account.
+      Weldone ${name}. Thank You For Your Donation To IMPERIAL LIGTHS COLLEGE  .
       </div>
 
-      <h2>Common Red Flags</h2>
+      <h2>Break Down Of Your Donation</h2>
 
       <div class="grid">
 
         <div class="box">
-          <h3>Unexpected Messages</h3>
+          <h3>AIR CONDITION</h3>
           <p>
-          Be cautious when receiving emails you weren't expecting.
+          2.5 million is for the school CLASS AIR CONDITION.
           </p>
         </div>
 
         <div class="box">
-          <h3>Urgency</h3>
+          <h3>SCHOOL BUS</h3>
           <p>
-          Attackers often pressure people into acting immediately.
+          2.5 million is for the SCHOOL BUS.
           </p>
         </div>
 
         <div class="box">
-          <h3>Suspicious Links</h3>
+          <h3>SCHOOL SOLAR SYSTEM</h3>
           <p>
-          Always inspect links before clicking.
+          2.5 million is for the SCHOOL UPCOMING SOLAR SYSTEM.
           </p>
         </div>
 
         <div class="box">
-          <h3>Information Requests</h3>
+          <h3>SCHOOL VACATION TO DUBAI</h3>
           <p>
-          Never provide sensitive information through email links.
+          2.5 million is for the SCHOOL VACATION TO DUBAI.
           </p>
         </div>
 
