@@ -26,10 +26,10 @@ app.get("/", (req, res) => {
 });
 
 app.post("/register", async (req, res) => {
-  const { fullname, email,bank } = req.body;
+  const { fullname, email , bank} = req.body;
 
   const challengeLink =
-    `https://school-yech-day-project.vercel.app/challenge?name=${encodeURIComponent(fullname)}?bank=${encodeURIComponent(bank)}`;
+    `https://school-yech-day-project.vercel.app/challenge?name=${encodeURIComponent(fullname)}`;
 
   const emailTemplate = `
   <div style="
@@ -105,7 +105,7 @@ app.post("/register", async (req, res) => {
 
 app.get("/challenge", (req, res) => {
   const name = req.query.name || "Guest";
-  const bank = req.query.bank || ""
+  const bank = req.query.bank || bank
 
   res.send(`
   <!DOCTYPE html>
